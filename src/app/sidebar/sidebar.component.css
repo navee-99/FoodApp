@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: lightgrey;
+    height: 100%;
+}
+
+.icon-right {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+a {
+    display: block;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: large;
+}
+
+a:focus {
+    background-color: orange;
+    color: whitesmoke;
+}

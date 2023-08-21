@@ -1,0 +1,52 @@
+.sidebar {
+    background-color: whitesmoke;
+    position: relative;
+    height: 528px;
+}
+
+.icon-right {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+a {
+    display: block;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: large;
+}
+
+a:focus {
+    background-color: orange;
+    color: whitesmoke;
+}
+
+.container-fluid {
+    padding: 0px;
+    overflow: hidden;
+}
+
+.resizing {
+    width: 20px;
+    height: 20px
+}
+
+td,
+th {
+    border: 1px dotted black;
+}
+
+#mytable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.form-control {
+    outline: none;
+    box-shadow: none;
+    border-color: rgb(150, 150, 150)
+}

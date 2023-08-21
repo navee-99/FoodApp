@@ -1,0 +1,96 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="header">
+                <img class="icon" src="/assets/logo-white.png">
+                <span class="foodzap">FOODZAP</span>
+            </div><br>
+        </div>
+        <div class="col-sm-4 myborder"><br>
+            <h1 style="text-align:center">REGISTER USER</h1>
+            <form id="myform" [formGroup]="registeruserform">
+                <div class="form-group">
+                    <label>Firstname:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="fname" formControlName="firstname" class="form-control">
+                    <div *ngIf="registeruserform.controls['firstname'].invalid && registeruserform.controls['firstname'].touched">
+                        <p *ngIf="registeruserform.controls['firstname'].errors?.['maxlength']" style="color:red">Maximum Length is 20</p>
+                        <p *ngIf="registeruserform.controls['firstname'].errors?.['required']" style="color:red">Firstname is mandatory</p>
+                        <p *ngIf="registeruserform.controls['firstname'].errors?.['pattern']" style="color:red">Please enter valid firstname</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Lastname:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" formControlName="lastname" class="form-control">
+                    <div *ngIf="registeruserform.controls['lastname'].touched">
+                        <p *ngIf="registeruserform.controls['lastname'].errors?.['maxlength']" style="color:red">Maximum Length is 20</p>
+                        <p *ngIf="registeruserform.controls['lastname'].errors?.['required']" style="color:red">LastName is mandatory</p>
+                        <p *ngIf="registeruserform.controls['lastname'].errors?.['pattern']" style="color:red">Please enter valid lastname</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mobile number:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" class="form-control" formControlName="mobileno">
+                    <div *ngIf="registeruserform.controls['mobileno'].touched">
+                        <p *ngIf="registeruserform.controls['mobileno'].errors?.['pattern']" style="color:red">Please enter valid mobile number</p>
+                        <p *ngIf="registeruserform.controls['mobileno'].errors?.['required']" style="color:red">Mobile number is mandatory</p>
+                        <p *ngIf="registeruserform.controls['mobileno'].errors?.['maxlength']" style="color:red">Maximum Length is 10</p>
+                        <p *ngIf="registeruserform.controls['mobileno'].errors?.['minlength']" style="color:red">Minimum Length is 10</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Address line1:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="address1" formControlName="address1" class="form-control">
+                    <div *ngIf="registeruserform.controls['address1'].touched ">
+                        <p *ngIf="registeruserform.controls['address1'].errors?.['minlength']" style="color:red">Minimum Length is 5</p>
+                        <p *ngIf="registeruserform.controls['address1'].errors?.['maxlength']" style="color:red">Maximum Length is 40</p>
+                        <p *ngIf="registeruserform.controls['address1'].errors?.['required']" style="color:red">Address is mandatory</p>
+                        <p *ngIf="registeruserform.controls['address1'].errors?.['pattern']" style="color:red">Please enter valid address,No special characters allowed</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Address line2:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="address2" formControlName="address2" class="form-control">
+                    <div *ngIf="registeruserform.controls['address2'].touched ">
+                        <p *ngIf="registeruserform.controls['address2'].errors?.['minlength']" style="color:red">Minimum Length is 5</p>
+                        <p *ngIf="registeruserform.controls['address2'].errors?.['maxlength']" style="color:red">Maximum Length is 40</p>
+                        <p *ngIf="registeruserform.controls['address2'].errors?.['required']" style="color:red">Address is mandatory</p>
+                        <p *ngIf="registeruserform.controls['address2'].errors?.['pattern']" style="color:red">Please enter valid address,No special characters allowed</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>City:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="city" formControlName="city" class="form-control">
+                    <div *ngIf="registeruserform.controls['city'].touched ">
+                        <p *ngIf="registeruserform.controls['city'].errors?.['minlength']" style="color:red">Minimum Length is 3</p>
+                        <p *ngIf="registeruserform.controls['city'].errors?.['maxlength']" style="color:red">Maximum Length is 20</p>
+                        <p *ngIf="registeruserform.controls['city'].errors?.['required']" style="color:red">City is mandatory</p>
+                        <p *ngIf="registeruserform.controls['city'].errors?.['pattern']" style="color:red">Please enter valid city</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>ZIP/Postal code:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="pincode" formControlName="pincode" class="form-control">
+                    <div *ngIf="registeruserform.controls['pincode'].touched ">
+                        <p *ngIf="registeruserform.controls['pincode'].errors?.['minlength']" style="color:red">Minimum Length is 3</p>
+                        <p *ngIf="registeruserform.controls['pincode'].errors?.['required']" style="color:red">Zipcode/Postalcode is mandatory</p>
+                        <p *ngIf="registeruserform.controls['pincode'].errors?.['pattern']" style="color:red">Please enter valid pincode</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label><span style="color:white">*</span>&nbsp;
+                    <input type="password" name="password" formControlName="password" class="form-control">
+                    <div *ngIf="registeruserform.controls['password'].touched ">
+                        <p *ngIf="registeruserform.controls['password'].errors?.['minlength']" style="color:red">Minimum Length is 6</p>
+                        <p *ngIf="registeruserform.controls['password'].errors?.['required']" style="color:red">Password is mandatory</p>
+                        <p *ngIf="registeruserform.controls['password'].errors?.['pattern']" style="color:red">Password must contain atleast 1 special character</p>
+                    </div>
+                </div>
+                <br><br>
+                <button class="btn btn-primary" [disabled]="registeruserform.invalid" (click)="postUser()">Submit</button>
+                <button (click)="goBack();" class="btn btn-primary m-3">Back to previous page</button>
+            </form>
+        </div>
+        <div class="col-sm-4 ">
+        </div>
+    </div>
+</div>

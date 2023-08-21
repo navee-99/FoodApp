@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <h2>Breakfast</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="breakfast">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of breakfastitems;index as i;">
+                    <img class="imgspacing" [src]="url[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <p>Price:{{item.price |currency:"INR"}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

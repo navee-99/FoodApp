@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-7 background">
+        </div>
+        <div class="col-sm-5 loginstyling">
+            <div class="header">
+                <img class="icon" src="assets/delivery-food.png">
+                <span class="foodzap">FOODZAP</span>
+            </div><br>
+            <div style="margin-top:20%;">
+                <h2>Login to Your Account</h2>
+                <p class=" text ">Are you hungry?Hurry up!</p><br>
+                <form [formGroup]="loginform">
+                    <div>
+                        <input type="text" class="textbox" placeholder="Username" formControlName="username">
+                        <div class="alignment" *ngIf="loginform.controls['username'].touched">
+                            <p *ngIf="loginform.controls['username'].errors?.['required']" style="color:rgba(230, 11, 11, 0.932)">Username is mandatory</p>
+                            <p *ngIf="loginform.controls['username'].errors?.['pattern']" style="color:rgba(230, 11, 11, 0.932)">Please enter valid username</p>
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="password" class="textbox" placeholder="Password" formControlName="password"><br>
+                        <div *ngIf="loginform.controls['password'].touched">
+                            <p *ngIf="loginform.controls['password'].errors?.['required']" style="color:rgba(230, 11, 11, 0.932)">Password is mandatory</p>
+                            <p *ngIf="loginform.controls['password'].errors?.['minlength']" style="color:rgba(230, 11, 11, 0.932)">Password Minimum length is 6</p>
+                        </div>
+                    </div><br>
+                    <div>
+                        <button class="btn btn-primary myform-control" (click)="submit()">Login to Your Account</button>
+                    </div><br>
+                    <div>
+                        <p class="text">Not a member yet?
+                            <a routerLink="/registeruser" class="anchor">Register now</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

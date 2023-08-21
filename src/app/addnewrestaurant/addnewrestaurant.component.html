@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="header">
+                <img class="icon" src="/assets/logo-white.png">
+                <span class="foodzap">FOODZAP</span>
+            </div><br>
+        </div>
+        <div class="col-sm-4 myborder"><br>
+            <h1 style="text-align:center">ADD NEW RESTAURANT</h1>
+            <form id="myform" [formGroup]="restaurantform">
+                <div class="form-group">
+                    <label>Itemname:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="fname" formControlName="itemname" class="form-control">
+                    <div *ngIf="restaurantform.controls['itemname'].invalid && restaurantform.controls['itemname'].touched">
+                        <p *ngIf="restaurantform.controls['itemname'].errors?.['maxlength']" style="color:red">Maximum Length is 30</p>
+                        <p *ngIf="restaurantform.controls['itemname'].errors?.['required']" style="color:red">Itemname is mandatory</p>
+                        <p *ngIf="restaurantform.controls['itemname'].errors?.['pattern']" style="color:red">Please enter valid itemname</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Choose Itemtype:</label>
+                    <span style="color:white">*</span>
+                    <select class="dropdown" (change)="findItemType($event)" formControlName="itemtype">
+                    <option disabled selected=true >select</option>
+                    <option value="starters">Starters</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="maincourse">Main course</option>
+                    <option value="juices">Juices</option>
+                    </select>
+                    <div *ngIf="restaurantform.controls['itemtype'].touched">
+                        <p *ngIf="restaurantform.controls['itemtype'].errors?.['required']" style="color:red">Itemtype is mandatory</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Restaurantname:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" class="form-control" formControlName="restaurantname">
+                    <div *ngIf="restaurantform.controls['restaurantname'].touched">
+                        <p *ngIf="restaurantform.controls['restaurantname'].errors?.['pattern']" style="color:red">Please enter valid restaurant name</p>
+                        <p *ngIf="restaurantform.controls['restaurantname'].errors?.['required']" style="color:red">Restaurant name is mandatory</p>
+                        <p *ngIf="restaurantform.controls['restaurantname'].errors?.['maxlength']" style="color:red">Maximum Length is 30</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Price:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="price" formControlName="price" class="form-control">
+                    <div *ngIf="restaurantform.controls['price'].touched ">
+                        <p *ngIf="restaurantform.controls['price'].errors?.['maxlength']" style="color:red">Maximum Length is 20</p>
+                        <p *ngIf="restaurantform.controls['price'].errors?.['required']" style="color:red">Price is mandatory</p>
+                        <p *ngIf="restaurantform.controls['price'].errors?.['pattern']" style="color:red">Please enter valid price</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Restaurantlocation:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="restaurantlocation" formControlName="restaurantlocation" class="form-control">
+                    <div *ngIf="restaurantform.controls['restaurantlocation'].touched ">
+                        <p *ngIf="restaurantform.controls['restaurantlocation'].errors?.['minlength']" style="color:red">Minimum Length is 5</p>
+                        <p *ngIf="restaurantform.controls['restaurantlocation'].errors?.['maxlength']" style="color:red">Maximum Length is 40</p>
+                        <p *ngIf="restaurantform.controls['restaurantlocation'].errors?.['required']" style="color:red">Location is mandatory</p>
+                        <p *ngIf="restaurantform.controls['restaurantlocation'].errors?.['pattern']" style="color:red">Please enter valid location</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Restaurantrating:</label><span style="color:white">*</span>&nbsp;
+                    <input type="text" name="restaurantrating" formControlName="restaurantrating" class="form-control">
+                    <div *ngIf="restaurantform.controls['restaurantrating'].touched ">
+                        <p *ngIf="restaurantform.controls['restaurantrating'].errors?.['required']" style="color:red">Restaurantrating is mandatory</p>
+                        <p *ngIf="restaurantform.controls['restaurantrating'].errors?.['pattern']" style="color:red">Please enter valid restaurant rating</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Imagename:</label><span style="color:white">*</span>&nbsp;
+                    <input type="file" name="imagename" formControlName="imagename" class="form-control" (change)="uploadImage($event)">
+                    <div *ngIf="restaurantform.controls['imagename'].touched ">
+                        <p *ngIf="restaurantform.controls['imagename'].errors?.['required']" style="color:red">Image is mandatory</p>
+                    </div>
+                </div>
+                <br><br>
+                <button class="btn btn-primary" [disabled]="restaurantform.invalid" (click)="postItems()">Submit</button>
+                <button (click)="goBack();" class="btn btn-primary m-3">Back to previous page</button>
+            </form>
+        </div>
+        <div class="col-sm-4 ">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <app-usernavbar></app-usernavbar>
+    <div *ngIf="noitems">
+        <h1>No Items in the cart!</h1>
+    </div>
+    <div *ngIf="availitems">
+        <div class="row" *ngFor="let item of allitems;index as i">
+            <p>Itemname:{{item.itemname}}</p>
+            <p>Restaurantname:{{item.restaurantname}}</p>
+            <p>Restaurantlocation:{{item.restaurantlocation}}</p>
+            <p>Restaurantrating:{{item.restaurantrating}}</p>
+            <p>Price:{{item.price |currency:"INR"}}</p>
+            <p>Quantity:
+                <select class="styling" (change)="findQuantity($event,i)">
+                    <option value="1" hidden>select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <button class="btn btn-primary styling" (click)="removeFromCart(i)">Remove from cart</button>
+        </div>
+    </div>
+    <button class="btn btn-primary styling mt-3" (click)="buynow()">Buy now</button>
+</div>

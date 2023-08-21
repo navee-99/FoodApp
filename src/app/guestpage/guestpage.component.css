@@ -1,0 +1,40 @@
+.myform-control {
+    width: 300px;
+    border: none;
+    height: 50px;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border-radius: 30px;
+    margin-top: 5%;
+}
+
+.container-fluid {
+    color: rgb(145, 141, 141);
+    overflow: hidden;
+}
+
+.btn,
+.btn-primary:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bgposition {
+    width: 840px;
+    height: 608px;
+}
+
+.styling {
+    margin-top: 20%;
+    color: rgb(59, 57, 57);
+}
+
+.spacing {
+    margin-left: 10px;
+}
+
+.li-tag {
+    list-style: none;
+}

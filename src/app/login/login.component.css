@@ -1,0 +1,49 @@
+.loginstyling {
+    text-align: center;
+    color: rgb(59, 57, 57);
+    height: 608px;
+}
+
+.textbox {
+    color: rgb(59, 57, 57);
+    outline-color: darkgray;
+    width: 300px;
+    border-color: darkgray;
+    border-width: thin;
+    height: 44px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.myform-control {
+    width: 300px;
+    border: none;
+    height: 50px;
+    outline: none;
+    background-color: orange;
+}
+
+.btn,
+.btn-primary:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.text {
+    color: rgb(109, 109, 109);
+}
+
+.anchor {
+    color: black;
+}
+
+.resizing {
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    background-image: url('/assets/bgimage.webp');
+    background-size: cover;
+    background-position: 28% 50%;
+}

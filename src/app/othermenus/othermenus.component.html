@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <app-usernavbar></app-usernavbar>
+    <h2>Starters</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="starter">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of starteritems;index as i;">
+                    <img class="imgspacing" [src]="url[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <h2>Maincourse</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="maincourse">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of maincourseitems;index as i;">
+                    <img class="imgspacing" [src]="maincourseurl[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <h2>Desserts</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="desserts">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of dessertitems;index as i;">
+                    <img class="imgspacing" [src]="desserturl[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Juices</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="juices">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of juiceitems;index as i;">
+                    <img class="imgspacing" [src]="juiceurl[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Dinner</h2>
+    <div class="row container">
+        <div>
+            <div class="row" id="dinner">
+                <div class="col-sm-4 rowstyle" *ngFor="let item of dinneritems;index as i;">
+                    <img class="imgspacing" [src]="dinnerurl[i]">
+                    <p>Itemname:{{item.itemname}}</p>
+                    <p>Restaurantname:{{item.restaurantname}}</p>
+                    <p>Restaurantlocation:{{item.restaurantlocation}} </p>
+                    <p>Restaurantrating:{{item.restaurantrating}}</p>
+                    <button class="btn btn-primary form-control" (click)="addToCart(item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

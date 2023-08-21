@@ -1,0 +1,46 @@
+.row {
+    background-color: rgb(238, 238, 238);
+    border-radius: 30px;
+    color: rgb(97, 93, 93);
+}
+
+img {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.styling {
+    margin-top: 5%;
+    color: rgb(59, 57, 57);
+    text-align: center;
+}
+
+.myform-control {
+    width: 300px;
+    border: none;
+    height: 50px;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border-radius: 30px;
+    margin-top: 10%;
+}
+
+.btn,
+.btn-primary:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.anchor {
+    text-decoration: underline;
+    color: blue;
+}
+
+.spacing {
+    border-radius: 10px;
+    height: 400px;
+    margin: 5% 0% 5% 5%;
+}

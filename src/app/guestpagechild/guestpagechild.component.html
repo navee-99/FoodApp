@@ -1,0 +1,62 @@
+<h1 class="styling">With Foodzap,enjoy your food in a zap and take your nap!</h1>
+<br>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <video class="spacing" autoplay loop>
+            <source src="assets/foodhdvideo.mp4" type="video/mp4">
+           </video>
+        </div>
+        <div class="col-sm-6 mt-3">
+            <h2>Explore different varieties at minimum prices!</h2><br>
+            <h5>Available food varieties</h5>
+            <ul>
+                <li>Italian</li>
+                <li>Chinese</li>
+                <li>South Indian</li>
+                <li>North Indian</li>
+                <li>Cusinies</li>
+                <li>Pasteries,ice creams,juices</li>
+            </ul><br>
+            <h5>Enjoy your food anytime,anywhere!</h5><br>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-5 mt-4 mb-3">
+            <h3 style="color:orange">About Foodzap</h3><br>
+            <p>Food zap is an online application to order your favorite food from your favorite destination.With any time any where agenda, we are happy to serve our customers with best food experience and bring relishing moments with food.</p>
+            <h6>Get your food at your doorstep by <a class="anchor" (click)="enableLogin()">clicking here</a></h6>
+            <div *ngIf="login">
+                <button class="btn btn-primary myform-control" routerLink="/login">Navigate to login</button>
+            </div>
+        </div>
+        <div class="col-sm-7 mt-4 mb-3">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/assets/car2.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/car1.webp">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/guestpage.gif">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

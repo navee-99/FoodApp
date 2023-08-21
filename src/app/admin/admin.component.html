@@ -1,0 +1,154 @@
+<div class="container-fluid">
+    <app-adminnavbar></app-adminnavbar>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="sidebar">
+                <a (click)="adminInfo()" class="active" routerLink="/admin">Admin</a>
+                <a (click)="userInfo()" routerLink="/admin">Users</a>
+                <a (click)="restaurantInfo()" routerLink="/admin">Restaurants</a>
+                <a (click)="orderInfo()" routerLink="/admin">Orders</a>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="row text-end">
+                <div class="col-sm-4 mt-2 wrapper">
+                    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText">
+                </div>
+
+            </div><br><br>
+            <div *ngIf="admin">
+                <h1>Admin details:</h1>
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Firstname</th>
+                            <th class="text-center">Lastname</th>
+                            <th class="text-center">Emailid</th>
+                            <th class="text-center">Contact no</th>
+                            <th class="text-center">Addressline1</th>
+                            <th class="text-center">Addressline2</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Pincode</th>
+                            <th class="text-center">Edit</th>
+                            <th class="text-center">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let currentAdmin of allAdminData | filter:searchText">
+                            <td>{{currentAdmin.firstname}}</td>
+                            <td>{{currentAdmin.lastname}}</td>
+                            <td>{{currentAdmin.emailid}}</td>
+                            <td>{{currentAdmin.phoneno}}</td>
+                            <td>{{currentAdmin.addressline1}}</td>
+                            <td>{{currentAdmin.addressline2}}</td>
+                            <td>{{currentAdmin.city}}</td>
+                            <td>{{currentAdmin.pincode}}</td>
+                            <td class="text-center"><img class="resizing" (click)="editAdmin(currentAdmin)" src="assets/edit.png "></td>
+                            <td class="text-center"><img class="resizing" (click)="deleteAdmin(currentAdmin)" src=" assets/delete.png "></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="users">
+                <h1>Users details:</h1>
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Firstname</th>
+                            <th class="text-center">Lastname</th>
+                            <th class="text-center">Contact no</th>
+                            <th class="text-center">Addressline1</th>
+                            <th class="text-center">Addressline2</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Pincode</th>
+                            <th class="text-center">Edit</th>
+                            <th class="text-center">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let currentConsumer of allConsumerData | filter:searchText">
+                            <td>{{currentConsumer.firstname}}</td>
+                            <td>{{currentConsumer.lastname}}</td>
+                            <td>{{currentConsumer.mobileno}}</td>
+                            <td>{{currentConsumer.address1}}</td>
+                            <td>{{currentConsumer.address2}}</td>
+                            <td>{{currentConsumer.city}}</td>
+                            <td>{{currentConsumer.pincode}}</td>
+                            <td class="text-center"><img class="resizing" (click)="editConsumer(currentConsumer)" src="assets/edit.png "></td>
+                            <td class="text-center"><img class="resizing" (click)="deleteConsumer(currentConsumer)" src=" assets/delete.png "></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="restaurants">
+                <h1>Restaurant details:</h1>
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Restaurantname</th>
+                            <th class="text-center">Restaurant location</th>
+                            <th class="text-center">Restaurant rating</th>
+                            <th class="text-center">Itemname</th>
+                            <th class="text-center">Item Price</th>
+                            <th class="text-center">Itemtype</th>
+                            <th class="text-center">Edit</th>
+                            <th class="text-center">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let currentItem of allItems | filter:searchText">
+                            <td>{{currentItem.restaurantname}}</td>
+                            <td>{{currentItem.restaurantlocation}}</td>
+                            <td>{{currentItem.restaurantrating}}</td>
+                            <td>{{currentItem.itemname}}</td>
+                            <td>{{currentItem.price}}</td>
+                            <td>{{currentItem.itemtype}}</td>
+                            <td class="text-center"><img class="resizing" (click)="editrestaurant(currentItem)" src="assets/edit.png "></td>
+                            <td class="text-center"><img class="resizing" (click)="deleterestaurant(currentItem)" src=" assets/delete.png "></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="orders">
+                <h1>Order details:</h1>
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Consumer name</th>
+                            <th class="text-center">Consumer address</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Itemnames</th>
+                            <th class="text-center">Item Price</th>
+                            <th class="text-center">Itemtype</th>
+                            <th class="text-center">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let currentOrder of allOrders  | filter:searchText">
+                            <td class="text-center">{{currentOrder.consumername}}</td>
+                            <td class="text-center">{{currentOrder.address}}</td>
+                            <td class="text-center">{{currentOrder.city}}</td>
+                            <td class="text-center">
+                                <div *ngFor="let currentItem of currentOrder.items;index as i;">
+                                    {{currentItem.itemname}}
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div *ngFor="let currentItem of currentOrder.items;index as i;">
+                                    {{currentItem.price}}
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div *ngFor="let currentItem of currentOrder.items;index as i;">
+                                    {{currentItem.itemtype}}
+                                </div>
+                            </td>
+                            <td class="text-center"><img class="resizing" (click)="deleteOrder(currentOrder)" src="assets/delete.png "></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

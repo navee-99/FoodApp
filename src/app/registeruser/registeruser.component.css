@@ -1,0 +1,25 @@
+.form-control {
+    outline: none;
+    box-shadow: none;
+    border-color: none;
+}
+
+.myborder {
+    border-width: 3px;
+    border-color: rgb(59, 57, 57);
+    color: white;
+    border-style: solid;
+    backdrop-filter: blur(10px);
+}
+
+.container-fluid {
+    background-image: url('/assets/formbackground.jfif');
+}
+
+.myform-control {
+    background-color: orange;
+}
+
+.foodzap {
+    color: white;
+}
